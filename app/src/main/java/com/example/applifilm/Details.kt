@@ -14,7 +14,6 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Card
-
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -39,7 +38,7 @@ fun DetailScreen(id:Int){
     val movie by viewModel.detailMovie.collectAsState()
 
     viewModel.detailMovies(id)
-    val imageUrl = "https://image.tmdb.org/t/p/w780" + (movie?.backdrop_path ?: String)
+    val imageUrl = "https://image.tmdb.org/t/p/original" + (movie?.backdrop_path ?: String)
     Column(
         modifier = Modifier
             .fillMaxSize()
