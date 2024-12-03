@@ -22,6 +22,12 @@ interface Api {
         @Query("append_to_response") credits: String,
         @Query("language") language:String
         ): DetailMovie
+    @GET("person/{id}")
+    suspend fun detailActor(
+        @Path("id") id: Int,
+        @Query("api_key") apikey: String,
+        @Query("language") language:String
+    ): DetailActor
 
     @GET("trending/tv/week")
     suspend fun lastSeries(@Query("api_key") apikey: String): TmdbSeriesResult

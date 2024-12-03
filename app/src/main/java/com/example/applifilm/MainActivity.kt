@@ -46,7 +46,10 @@ data class Series(val name: String)
 data class Acteurs(val name: String)
 
 @Serializable
-data class Details(val id: Int)
+data class DetailsFilm(val id: Int)
+
+@Serializable
+data class DetailsActeur(val id:Int)
 
 class MainActivity : ComponentActivity() {
 
@@ -137,7 +140,7 @@ class MainActivity : ComponentActivity() {
                                             }
                                         }
                                         else{
-                                            if (currentDestination?.hasRoute<Details>() == true) {
+                                            if (currentDestination?.hasRoute<DetailsFilm>() == true) {
                                             TextField(
                                                 value = text,
                                                 onValueChange = { text = it },
@@ -212,9 +215,13 @@ class MainActivity : ComponentActivity() {
                             val acteurs: Acteurs = backStackEntry.toRoute()
                             ActeursScreen(acteurs.name)
                         }
-                        composable<Details> { backStackEntry ->
-                            val details: Details = backStackEntry.toRoute()
-                            DetailScreen(details.id)
+                        composable<DetailsFilm> { backStackEntry ->
+                            val details: DetailsFilm = backStackEntry.toRoute()
+                            DetailFilmScreen(details.id)
+                        }
+                        composable<DetailsActeur> { backStackEntry ->
+                            val details: DetailsActeur = backStackEntry.toRoute()
+                            DetailActeurScreen(details.id)
                         }
                     }
                 }

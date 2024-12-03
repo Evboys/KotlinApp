@@ -62,7 +62,7 @@ fun FilmsScreen(search: String, navController: NavController) {
                         )
                         Button(
                             onClick = {
-                                navController.navigate(Details(movie.id))
+                                navController.navigate(DetailsFilm(movie.id))
                             },
                             modifier = Modifier
                                 .padding(10.dp)
@@ -121,7 +121,7 @@ fun FilmsScreen(search: String, navController: NavController) {
                         )
                         Button(
                             onClick = {
-                                navController.navigate(Details(movie.id))
+                                navController.navigate(DetailsFilm(movie.id))
                             },
                             modifier = Modifier
                                 .padding(10.dp)

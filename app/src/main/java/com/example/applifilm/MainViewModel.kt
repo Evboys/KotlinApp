@@ -14,6 +14,7 @@ public class MainViewModel : ViewModel() {
     val series = MutableStateFlow<List<Serie>>(listOf())
     val actors = MutableStateFlow<List<Actor>>(listOf())
     val detailMovie = MutableStateFlow<DetailMovie?>(null)
+    val detailActor = MutableStateFlow<DetailActor?>(null)
     val apikey = "be1ca8af0da3936dcdb2aeaad464d374"
     val language= "fr-FR"
     val service = Retrofit.Builder()
@@ -77,4 +78,10 @@ public class MainViewModel : ViewModel() {
             actors.value = service.lastActors(apikey).results
         }
     }
+    fun detailActors(id:Int) {
+        viewModelScope.launch {
+            detailActor.value = service.detailActor(id,apikey,language)
+        }
+    }
+
 }

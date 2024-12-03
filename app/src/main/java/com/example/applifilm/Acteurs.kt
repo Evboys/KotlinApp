@@ -26,6 +26,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.AsyncImage
+import androidx.navigation.NavController
 
 @Composable
 fun ActeursScreen(search:String){
@@ -65,7 +66,7 @@ fun ActeursScreen(search:String){
                         )
                         Button(
                             onClick = {
-
+                                /*navController.navigate(DetailsActeur(actor.id))*/
                             },
                             modifier = Modifier
                                 .padding(10.dp)

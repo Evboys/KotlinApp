@@ -33,7 +33,7 @@ import coil.compose.AsyncImage
 
 
 @Composable
-fun DetailScreen(id:Int){
+fun DetailFilmScreen(id:Int){
     val viewModel: MainViewModel = viewModel()
     val movie by viewModel.detailMovie.collectAsState()
 
